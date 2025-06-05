@@ -1,0 +1,68 @@
+.dash-card {
+    width: 24%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right, #AD9CFF, #9782FF);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+
+.dash-card h1 {
+    margin-top: 30px;
+    position: relative;
+}
+
+/* .dash-card .dash-bg {
+    position: absolute;
+    background-color: cyan;
+    width: 100%;
+    height: 40%;
+} */
+
+/* graph go here */
+.graph-container {
+
+    width: 100%;
+    height: 500px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.graph-container .first-graph {
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.graph-container .second-graph {
+    width: 38%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.cover-bg {
+    width: 100%; 
+    height: 140px; 
+    background-color: #9782FF; 
+    /* background-image: image('./assets/images/dashboard/ecommerce/filterbg.jpg'); */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* .card-container {
+    width: 24%; 
+    height: 50px; 
+    background-color: red;
+} */

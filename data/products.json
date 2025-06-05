@@ -1,0 +1,81 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1",
+            "image": "./assets/images/product_images/thumb_image1.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 100
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "image": "./assets/images/product_images/thumb_image2.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 200
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image3.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 4,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image4.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 5,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image5.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 6,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image6.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 7,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image7.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 8,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image8.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 9,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image9.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 10,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image10.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        },
+        {
+            "id": 10,
+            "name": "Product 3",
+            "image": "./assets/images/product_images/thumb_image10.jpg",
+            "discription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ratione.",
+            "price": 300
+        }
+    ]
+}
