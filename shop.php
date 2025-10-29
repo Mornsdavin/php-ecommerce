@@ -71,6 +71,37 @@
                 background-position: top, center
             }
         }
+
+        .modern-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: linear-gradient(135deg, #4CAF50, #81C784);
+            color: white;
+            padding: 25px 50px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modern-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modern-popup span {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -123,7 +154,28 @@
        <?php include 'includes/footer.php'; ?>
     </div>
 
-    
+    <!-- Payment Success Popup -->
+    <div id="paymentPopup" class="modern-popup">
+        ✔ Payment Successfully, Thank you!
+    </div>
+
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        if (getQueryParam('payment') === 'success') {
+            const popup = document.getElementById('paymentPopup');
+            popup.classList.add('show'); // show with animation
+
+            // Hide after 1 second
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 1000);
+        }
+    </script>
 
 </body>
 

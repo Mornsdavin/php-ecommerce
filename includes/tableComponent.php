@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <form action="" method="POST" style="display: flex; justify-content: space-between;">
+    <form action="" method="POST" style="display: flex; justify-content: space-between;" onsubmit="clearCart()">
         <div style="width: 25%; height: 400px; background-color: #fff; border-radius: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <h3 style="text-align: center">Information</h3>
             <div style="height: 20px;"></div>
@@ -197,6 +197,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             cart = cart.filter(item => item.id !== id);
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCart();
+        }
+
+        // Remove data after Payment
+        function clearCart() {
+            localStorage.removeItem('cart');
+            return true;
         }
 
         // Initialize the cart

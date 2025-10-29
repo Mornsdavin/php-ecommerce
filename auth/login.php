@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user && $password == $user['password']) {
         $_SESSION["user"] = $user['email'];
+        $_SESSION["user_name"] = $user['name'];
         header("Location: ../admin/index.php");
         exit();
     } else {

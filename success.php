@@ -163,8 +163,8 @@
 
     <script>
         setTimeout(function() {
-            window.location.href = "shop.php";
-        }, 2500);
+            window.location.href = "shop.php?payment=success";
+        }, 2000);
     </script>
 </body>
 

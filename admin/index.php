@@ -9,17 +9,30 @@ $productCount = count($products);
 $order_history = $db->getRows('order_history');
 $orderCount = count($order_history);
 
-$productDates = array_column($products, 'createDate'); 
+//data for line chart - products added per month
+$productDates = array_column($products, 'createDate');
 
-$monthlyProductCount = array_fill(0, 6, 0); 
 
+$monthlyCounts = array_fill(0, 12, 0);
 foreach ($productDates as $date) {
   $month = date('n', strtotime($date)) - 1;
-  $monthlyProductCount[$month]++;
+  $monthlyCounts[$month]++;
 }
 
-$monthlyProductData = json_encode($monthlyProductCount);
+$currentMonth = date('n'); // 1–12
+$months = [];
+$data = [];
 
+for ($i = 5; $i >= 0; $i--) {
+  $monthIndex = ($currentMonth - $i - 1 + 12) % 12;
+  $months[] = date('M', mktime(0, 0, 0, $monthIndex + 1, 1));
+  $data[] = $monthlyCounts[$monthIndex];
+}
+
+$monthLabels = json_encode($months);
+$monthlyProductData = json_encode($data);
+
+$totalLast6Months = array_sum($data);
 
 ?>
 
@@ -57,24 +70,23 @@ $monthlyProductData = json_encode($monthlyProductCount);
 
   </div>
 
-
-
   <script>
     var ctx = document.getElementById('myLineChart').getContext('2d');
 
     var monthlyProductData = <?php echo $monthlyProductData; ?>;
+    var monthLabels = <?php echo $monthLabels; ?>;
 
     var myLineChart = new Chart(ctx, {
-      type: 'line', // Chart type
+      type: 'line',
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        labels: monthLabels, // Dynamic last 6 months
         datasets: [{
-          label: 'Products Added',
+          label: 'Products Added in Last 6 Months',
           data: monthlyProductData,
           borderColor: 'blue',
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
           borderWidth: 2,
-          tension: 0.35
+          tension: 0.5
         }]
       },
       options: {
@@ -98,10 +110,10 @@ $monthlyProductData = json_encode($monthlyProductCount);
     var myPolarChart = new Chart(ctx, {
       type: 'polarArea', // Chart type
       data: {
-        labels: ['Customers', 'Order', 'Out of Stock'],
+        labels: ['Customers', 'Order'],
         datasets: [{
           label: 'Total',
-          data: [6, 6, 0], // Values for each section
+          data: [<?php echo $orderCount; ?>, <?php echo $orderCount; ?>], // Values for each section
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
             'rgba(54, 162, 235, 0.5)',

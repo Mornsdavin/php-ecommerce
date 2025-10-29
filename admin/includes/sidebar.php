@@ -7,7 +7,8 @@
 
 <body>
     <?php
-    $current_page = basename($_SERVER['PHP_SELF']);
+        session_start();
+        $current_page = basename($_SERVER['PHP_SELF']);
     ?>
 
     <style>
@@ -18,6 +19,11 @@
 
         .nav-item.active a {
             color: white !important;
+        }
+
+        h5{
+            text-transform: uppercase !important;
+            text-align: center;
         }
     </style>
 
@@ -31,6 +37,8 @@
                     <div class="nav-profile-text d-flex ml-0 mb-4 flex-column">
                     </div>
                 </a>
+                <h5> <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Guest'; ?></h5>
+                <p style="text-align: center;"> <?php echo isset($_SESSION['user']) ? $_SESSION['user'] : 'Guest'; ?></p>
             </li>
             <li class="pt-2 pb-2"></li>
 

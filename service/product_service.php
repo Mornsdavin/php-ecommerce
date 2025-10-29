@@ -7,11 +7,11 @@
 class DB
 {
 
-    // private $dbHost     = "127.0.0.1";
-    private $dbHost     = "34.124.170.111";
+    private $dbHost     = "127.0.0.1";
+    // private $dbHost     = "34.124.170.111";
     // private $dbUsername = "root";
-    private $dbUsername = "admin";
-    private $dbPassword = "yourpassword";
+    private $dbUsername = "root";
+    private $dbPassword = "admin168";
     private $dbName     = "ecommerce_web_year4";
     private $db;
 
